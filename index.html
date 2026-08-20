@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dentistry Notes</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      color: #172033;
+    }
+
+    header {
+      background: #173b57;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #d5dce5;
+      border-radius: 14px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #e1e6ed;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #5d6878;
+      line-height: 1.5;
+    }
+
+    .section-title {
+      margin-top: 30px;
+    }
+
+    .note {
+      background: white;
+      padding: 20px;
+      margin-top: 12px;
+      border-radius: 16px;
+      border-left: 5px solid #173b57;
+    }
+
+    .note h3 {
+      margin-top: 0;
+    }
+
+    .note p {
+      line-height: 1.6;
+      color: #4d5968;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #697586;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🦷 Dentistry Notes</h1>
+  <p>Your simple dental study companion</p>
+</header>
+
+<main>
+
+  <input
+    id="search"
+    class="search"
+    type="search"
+    placeholder="🔍 Search dentistry topics..."
+  >
+
+  <h2>📚 Subjects</h2>
+
+  <section class="subjects">
+
+    <div class="card" data-search="operative dentistry">
+      <h2>🦷 Operative Dentistry</h2>
+      <p>Restorative dentistry, dental materials and cavity preparation.</p>
+    </div>
+
+    <div class="card" data-search="oral surgery">
+      <h2>🩺 Oral Surgery</h2>
+      <p>Basic principles of oral surgical procedures and complications.</p>
+    </div>
+
+    <div class="card" data-search="prosthodontics">
+      <h2>🦷 Prosthodontics</h2>
+      <p>Complete dentures, fixed prostheses and treatment planning.</p>
+    </div>
+
+    <div class="card" data-search="periodontology">
+      <h2>🌿 Periodontology</h2>
+      <p>Periodontal tissues, periodontal disease and prevention.</p>
+    </div>
+
+    <div class="card" data-search="oral pathology">
+      <h2>🔬 Oral Pathology</h2>
+      <p>Important oral diseases and their clinical features.</p>
+    </div>
+
+    <div class="card" data-search="dental anatomy">
+      <h2>🧠 Dental Anatomy</h2>
+      <p>Tooth morphology, numbering systems and anatomical landmarks.</p>
+    </div>
+
+  </section>
+
+  <h2 class="section-title">📝 Sample Notes</h2>
+
+  <div class="note" data-search="dental plaque">
+    <h3>Dental Plaque</h3>
+    <p>
+      Dental plaque is a structured community of microorganisms
+      that develops on tooth surfaces. Good oral hygiene helps
+      control plaque accumulation.
+    </p>
+  </div>
+
+  <div class="note" data-search="dental caries">
+    <h3>Dental Caries</h3>
+    <p>
+      Dental caries is a biofilm-mediated disease that can cause
+      progressive destruction of mineralized tooth tissues.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  Dentistry Notes • Educational study project
+</footer>
+
+<script>
+
+  const search = document.getElementById("search");
+
+  const items = document.querySelectorAll("[data-search]");
+
+  search.addEventListener("input", function() {
+
+    const query = search.value.toLowerCase();
+
+    items.forEach(function(item) {
+
+      const text = item.getAttribute("data-search");
+
+      if (text.includes(query)) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>

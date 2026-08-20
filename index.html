@@ -1,208 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dentistry Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dentistry Notes</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
+header{
+  background:#123c69;
+  color:white;
+  padding:24px 18px;
+  text-align:center;
+}
+header h1{margin:0;font-size:28px}
+header p{margin:8px 0 0}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7f9;
-      color: #172033;
-    }
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:18px;
+}
 
-    header {
-      background: #173b57;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
+.search{
+  width:100%;
+  padding:15px;
+  border:1px solid #ccd5e0;
+  border-radius:12px;
+  font-size:16px;
+  margin-bottom:18px;
+}
 
-    header h1 {
-      margin: 0 0 8px;
-      font-size: 30px;
-    }
+.card{
+  background:white;
+  padding:20px;
+  margin-bottom:18px;
+  border-radius:16px;
+  border:1px solid #dce3eb;
+  box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
 
-    header p {
-      margin: 0;
-    }
+.card h2{
+  margin-top:0;
+  color:#123c69;
+}
 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+.card h3{color:#185a8d}
 
-    .search {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #d5dce5;
-      border-radius: 14px;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
+.diagram{
+  background:#eef5fb;
+  border:2px solid #b9cee2;
+  border-radius:14px;
+  padding:18px;
+  text-align:center;
+  margin:15px 0;
+}
 
-    .subjects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-    }
+.tooth{
+  display:inline-block;
+  font-size:70px;
+  margin:8px;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid #e1e6ed;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
+.layer{
+  padding:10px;
+  margin:6px;
+  border-radius:8px;
+  font-weight:bold;
+}
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 19px;
-    }
+.enamel{background:#e8f6ff}
+.dentin{background:#f5dfb8}
+.pulp{background:#ffd0d0}
 
-    .card p {
-      color: #5d6878;
-      line-height: 1.5;
-    }
+.clinical{
+  border-left:5px solid #d97706;
+  background:#fff8e8;
+  padding:15px;
+  border-radius:8px;
+}
 
-    .section-title {
-      margin-top: 30px;
-    }
+.mcq{
+  background:#f7f9fc;
+  padding:15px;
+  border-radius:10px;
+  margin-top:12px;
+}
 
-    .note {
-      background: white;
-      padding: 20px;
-      margin-top: 12px;
-      border-radius: 16px;
-      border-left: 5px solid #173b57;
-    }
+.answer{
+  color:#126b3f;
+  font-weight:bold;
+}
 
-    .note h3 {
-      margin-top: 0;
-    }
+ul{line-height:1.7}
+p{line-height:1.6}
 
-    .note p {
-      line-height: 1.6;
-      color: #4d5968;
-    }
+button{
+  background:#123c69;
+  color:white;
+  border:0;
+  padding:11px 16px;
+  border-radius:9px;
+  cursor:pointer;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #697586;
-    }
-  </style>
+footer{
+  text-align:center;
+  padding:25px;
+  color:#667085;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🦷 Dentistry Notes</h1>
-  <p>Your simple dental study companion</p>
+<h1>🦷 Dentistry Notes</h1>
+<p>Deep learning • Clinical scenarios • Diagrams • MCQs</p>
 </header>
 
-<main>
+<div class="container">
 
-  <input
-    id="search"
-    class="search"
-    type="search"
-    placeholder="🔍 Search dentistry topics..."
-  >
+<input
+class="search"
+id="search"
+placeholder="🔎 Search dentistry notes..."
+>
 
-  <h2>📚 Subjects</h2>
+<div class="card">
+<h2>📚 Starter Guide</h2>
 
-  <section class="subjects">
+<p>
+Welcome to Dentistry Notes. This starter section explains the
+fundamental concepts every dental student should understand before
+moving into advanced clinical dentistry.
+</p>
 
-    <div class="card" data-search="operative dentistry">
-      <h2>🦷 Operative Dentistry</h2>
-      <p>Restorative dentistry, dental materials and cavity preparation.</p>
-    </div>
+<ul>
+<li>Tooth anatomy</li>
+<li>Oral tissues</li>
+<li>Dental caries</li>
+<li>Periodontal basics</li>
+<li>Dental terminology</li>
+<li>Clinical reasoning</li>
+<li>MCQs and clinical cases</li>
+</ul>
+</div>
 
-    <div class="card" data-search="oral surgery">
-      <h2>🩺 Oral Surgery</h2>
-      <p>Basic principles of oral surgical procedures and complications.</p>
-    </div>
 
-    <div class="card" data-search="prosthodontics">
-      <h2>🦷 Prosthodontics</h2>
-      <p>Complete dentures, fixed prostheses and treatment planning.</p>
-    </div>
+<div class="card searchable">
 
-    <div class="card" data-search="periodontology">
-      <h2>🌿 Periodontology</h2>
-      <p>Periodontal tissues, periodontal disease and prevention.</p>
-    </div>
+<h2>1. 🦷 Basic Tooth Anatomy</h2>
 
-    <div class="card" data-search="oral pathology">
-      <h2>🔬 Oral Pathology</h2>
-      <p>Important oral diseases and their clinical features.</p>
-    </div>
+<p>
+A tooth is a specialized mineralized organ located within the oral
+cavity. Its major structures are enamel, dentin, pulp and cementum.
+Understanding these layers is essential for understanding caries,
+restorative dentistry and endodontics.
+</p>
 
-    <div class="card" data-search="dental anatomy">
-      <h2>🧠 Dental Anatomy</h2>
-      <p>Tooth morphology, numbering systems and anatomical landmarks.</p>
-    </div>
+<div class="diagram">
 
-  </section>
+<div class="tooth">🦷</div>
 
-  <h2 class="section-title">📝 Sample Notes</h2>
+<div class="layer enamel">
+ENAMEL — outer protective layer
+</div>
 
-  <div class="note" data-search="dental plaque">
-    <h3>Dental Plaque</h3>
-    <p>
-      Dental plaque is a structured community of microorganisms
-      that develops on tooth surfaces. Good oral hygiene helps
-      control plaque accumulation.
-    </p>
-  </div>
+<div class="layer dentin">
+DENTIN — bulk of the tooth
+</div>
 
-  <div class="note" data-search="dental caries">
-    <h3>Dental Caries</h3>
-    <p>
-      Dental caries is a biofilm-mediated disease that can cause
-      progressive destruction of mineralized tooth tissues.
-    </p>
-  </div>
+<div class="layer pulp">
+PULP — nerves + blood vessels
+</div>
 
-</main>
+</div>
 
-<footer>
-  Dentistry Notes • Educational study project
-</footer>
+<h3>Enamel</h3>
 
-<script>
+<p>
+Enamel is the highly mineralized outer covering of the anatomical
+crown. It is the hardest tissue in the human body. Unlike many other
+tissues, mature enamel has no living cells and therefore has very
+limited biological repair capacity.
+</p>
 
-  const search = document.getElementById("search");
+<h3>Dentin</h3>
 
-  const items = document.querySelectorAll("[data-search]");
+<p>
+Dentin lies beneath enamel and cementum. It forms most of the tooth
+structure. Dentinal tubules extend through dentin and help explain
+dentinal sensitivity.
+</p>
 
-  search.addEventListener("input", function() {
+<h3>Pulp</h3>
 
-    const query = search.value.toLowerCase();
+<p>
+The dental pulp is a soft connective tissue containing blood vessels,
+nerves and cells. Pulpal inflammation is clinically important because
+it can produce characteristic tooth pain.
+</p>
 
-    items.forEach(function(item) {
+<h3>Cementum</h3>
 
-      const text = item.getAttribute("data-search");
+<p>
+Cementum covers the anatomical root and provides attachment for
+periodontal ligament fibers.
+</p>
 
-      if (text.includes(query)) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
-      }
+<div class="clinical">
+<strong>🩺 Clinical connection:</strong><br>
+If dental caries progresses through enamel and reaches dentin,
+bacterial products can travel through dentinal tubules. The patient
+may begin experiencing sensitivity, particularly to cold or sweet
+stimuli.
+</div>
 
-    });
+</div>
 
-  });
 
-</script>
+<div class="card searchable">
 
-</body>
-</html>
+<h2>2. 🧠 Understanding Dental Caries</h2>
+
+<p>
+Dental caries is a biofilm-mediated, sugar-driven, multifactorial
+disease that results in the net loss of mineral from dental hard
+tissues.
+</p>
+
+<h3>The basic process</h3>
+
+<div class="diagram">
+
+<p>🍬 Fermentable carbohydrate</p>
+<p>↓</p>
+<p>🦠 Plaque bacteria metabolize carbohydrate</p>
+<p>↓</p>
+<p>⚗️ Acid production</p>
+<p>↓</p>
+<p>⬇️ Local pH</p>
+<p>↓</p>
+<p>🦷 Demineralization</p>
+<p>↓</p>
+<p>🕳️ Carious lesion</p>
+
+</div>
+
+<h3>Important risk factors</h3>
+
+<ul>
+<li>Frequent intake of fermentable carbohydrates</li>
+<li>Dental plaque/biofilm</li>
+<li>Reduced salivary protection</li>
+<li>Inadequate fluoride exposure</li>
+<li>Poor oral hygiene</li>
+<li>Deep pits and fissures</li>
+</ul>
+
+<div class="clinical">
+<strong>🩺 Clinical scenario:</strong><br>
+A student frequently drinks sugary beverages throughout the day.
+Even though the total amount of sugar consumed is not enormous,
+the repeated exposure gives plaque bacteria multiple opportunities
+to produce acid. Caries risk therefore increases.
+</div>
+
+</div>
+
+
+<div class="card searchable">
+
+<h2>3. 🪥 Periodontal Basics</h2>
+
+<p>
+The periodontium consists of the tissues supporting and surrounding
+the teeth.
+</p>
+
+<div class="diagram">
+
+<p>🦷 Tooth</p>
+<p>│</p>
+<p>├── Gingiva</p>
+<p>├── Periodontal ligament</p>
+<p>├── Cementum</p>
+<p>└── Alveolar bone</p>
+
+</div>
+
+<h3>Gingiva</h3>
+<p>
+The gingiva is the mucosal tissue surrounding the teeth and covering
+the alveolar processes.
+</p>
+
+<h3>Periodontal ligament</h3>
+<p>
+The periodontal ligament is a specialized connective tissue between

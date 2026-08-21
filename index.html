@@ -305,3 +305,52 @@ the alveolar processes.
 <h3>Periodontal ligament</h3>
 <p>
 The periodontal ligament is a specialized connective tissue between
+  </p>
+
+<div class="card">
+  <h2>🦷 Dental Caries</h2>
+  <p>
+    Dental caries is a disease involving demineralization and destruction
+    of the hard tissues of the tooth, commonly associated with bacterial acids.
+  </p>
+</div>
+
+<div class="card">
+  <h2>🪥 Oral Hygiene</h2>
+  <p>
+    Good oral hygiene includes tooth brushing with fluoride toothpaste,
+    interdental cleaning, and regular dental check-ups.
+  </p>
+</div>
+
+<div class="card">
+  <h2>🦷 Tooth Anatomy</h2>
+  <p>
+    The main parts of a tooth include enamel, dentin, pulp, cementum,
+    and the periodontal tissues surrounding the tooth.
+  </p>
+</div>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+
+search.addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    if (text.includes(query)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
